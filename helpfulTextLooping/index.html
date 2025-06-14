@@ -17,8 +17,12 @@
 
 
     <script>
-        function showHelpText(text){
-            document.querySelector('#help-text').innerHTML = text
+        function showHelpText(text) {
+            document.querySelector('#help-text').innerHTML = text;
+        }
+
+        function removeHelpText() {
+            document.querySelector('#help-text').innerHTML = '';
         }
 
         const helps = [
@@ -28,9 +32,13 @@
         ];
 
         for(const help of helps){
-            document.getElementById(help.id).onfocus = function (){
+            const input = document.getElementById(help.id);
+
+            input.onfocus = function (){
                 showHelpText(help.text);
             }
+
+            input.onblur = () => removeHelpText();
         }
 
     </script>
