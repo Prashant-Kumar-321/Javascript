@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Text Size Control</title>
+    <style>
+        body {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 16px; 
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="size-btns">
+        <h3>Control Text Size</h3>
+
+        <div>
+            <label>
+                <input type="radio" name="text-size" id="size-14">
+                small
+            </label>    
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="text-size" id="size-16">
+                medium
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="text-size" id="size-20">
+                large
+            </label>
+        </div>
+    </div>
+
+    <blog>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui officiis ex totam, vel sapiente libero necessitatibus voluptatibus aspernatur pariatur tenetur quas vitae ut perspiciatis exercitationem suscipit, itaque quod autem quidem doloremque eos ad voluptas. Beatae.
+        </p>
+    </blog>
+</body>
+    <script>
+        const radio14 = document.getElementById('size-14');
+        const radio16 = document.getElementById('size-16');
+        const radio20 = document.getElementById('size-20');
+
+        function makeSizer(size){
+
+            return () => {
+                document.body.style.fontSize = `${size}px`;
+            }
+        }
+
+        radio14.onclick = makeSizer(14);
+        radio16.onclick = makeSizer(16);
+        radio20.onclick = makeSizer(20);
+
+    </script>
+
+</html>

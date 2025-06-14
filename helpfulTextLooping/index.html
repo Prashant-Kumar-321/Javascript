@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures in loop</title>
+</head>
+<body>
+    <form action="#">
+        <p id="help-text"></p>
+
+        <p>Email: <input type="text" name="email" id="email"></p>
+        <p>Full Name: <input type="text" name="name" id="name"></p>
+        <p>Age: <input type="number" name="age" id="age" min="16"></p>
+
+    </form>
+
+
+    <script>
+        function showHelpText(text){
+            document.querySelector('#help-text').innerHTML = text
+        }
+
+        const helps = [
+            {id: 'email', text: 'Enter you valid email address'}, 
+            {id: 'name', text: 'Enter your full name'}, 
+            {id: 'age', text: 'Enter your age (must be above 16)'}
+        ];
+
+        for(const help of helps){
+            document.getElementById(help.id).onfocus = function (){
+                showHelpText(help.text);
+            }
+        }
+
+    </script>
+</body>
+</html>
