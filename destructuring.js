@@ -8,7 +8,7 @@
 let buttonOneColor = "blue"; 
 let buttonTwoColor = "purple"; 
 
-[buttonOneColor, buttonTwoColor] = [buttonTwoColor, buttonOneColor] 
+[buttonOneColor, buttonTwoColor] = [buttonTwoColor, buttonOneColor]
 
 console.log(`button one color = ${buttonOneColor}`)
 console.log(`button two color = ${buttonTwoColor}`)
@@ -128,6 +128,3 @@ console.log(`Other grades:  ${otherGrades}`); */
         console.log(`a = ${a}, b = ${b}`);
     }); 
 */
-
-
-
